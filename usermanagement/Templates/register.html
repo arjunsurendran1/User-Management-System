@@ -5,28 +5,23 @@
     <title>registration</title>
 </head>
 <body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>registration</title>
-</head>
-<body>
-<form action="home" method="post">
+<form action="register" method="post">
     {% csrf_token %}
     <input type="text" name="First_name" placeholder="First name"><br>
     <input type="text" name="Last_name" placeholder="Last name"><br>
     <input type="text" name="User_name" placeholder="user name"><br>
     <input type="email" name="email" placeholder="Email"><br>
     <input type="password" name="password1" placeholder="password"><br>
-    <input type="password" name="password" placeholder="confirm password"><br>
+    <input type="password" name="password2" placeholder="confirm password"><br>
+    <input type="submit">
 
 
 
-    <button type="submit" >
 </form>
-
-</body>
-</html>
+<div>
+    {%  for message in messages %}
+    <h3>{{message}}</h3>
+    {%  endfor %}
+</div>
 </body>
 </html>
