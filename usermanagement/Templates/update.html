@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+
+<body>
+{% block content %}
+<form method="POST" action="/update/{{ ums.id }}">
+    {% csrf_token %}
+<table>
+    <tr><td><input type="text" name="First_name" required maxlength="200" value="{{ ums.First_name }}"/></td></tr>
+    <tr><td><input type="text" name="Last_name" required maxlength="200" id="id_Last_name" value="{{ ums.Last_name }}"/></td></tr>
+    <tr><td><input type="text" name="User_name" required maxlength="200" id="id_User_name" value="{{ ums.User_name }}"/></td></tr>
+
+    <tr><td><input type="email" name="Email" required maxlength="200" id="id_Email" value="{{ ums.Email }}"/></td></tr>
+    <tr><td><input type="password" name="password1" required maxlength="200" id="id_password1" value="{{ ums.password1 }}"/></td></tr>
+
+    <tr><td><input type="password" name="password2" required maxlength="15" id="id_password2" value="{{ ums.password2 }}"/></td></tr>
+    <tr><td><button type="submit">Update</button></td></tr>
+</table>
+</form>
+{% endblock %}
+</body>
+
+</html>

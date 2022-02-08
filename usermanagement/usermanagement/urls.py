@@ -22,5 +22,5 @@ urlpatterns = [
     path('', include('usermanage.urls')),
     path('login/', include('login.urls')),
     path('createuser/', include('createuser.urls')),
-
+    path('updateuser/', include('updateuser.urls')),
 ]

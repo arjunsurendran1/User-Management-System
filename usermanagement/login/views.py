@@ -32,11 +32,11 @@ def create_user(request):
 
 
 def update_user(request):
-    return render(request, 'update_user.html')
+    return render(request, 'update.html')
 
 
 def delete_user(request):
-    return render(request, 'delete_user.html')
+    return render(request, 'delete.html')
 
 
 def home(request):

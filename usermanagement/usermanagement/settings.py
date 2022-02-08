@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'usermanage',
     'login',
     'createuser',
+    'updateuser',
 ]
 
 MIDDLEWARE = [
