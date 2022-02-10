@@ -3,23 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <title>registration</title>
+    <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+.div1{
+
+  height: 150px;
+  width: 70%;
+  padding-left:300px;
+
+
+}
+.bdy{
+background-color:powderblue;
+}
+
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
 </head>
-<body>
+<body class="bdy">
+<div class="div1">
 <form action="register" method="post">
-    {% csrf_token %}
-    <input type="text" name="First_name" placeholder="First name"><br>
-    <input type="text" name="Last_name" placeholder="Last name"><br>
-    <input type="text" name="User_name" placeholder="user name"><br>
-    <input type="email" name="email" placeholder="Email"><br>
-    <input type="password" name="password1" placeholder="password"><br>
-    <input type="password" name="password2" placeholder="confirm password"><br>
-    <input type="submit">
-    <button type="reset" >Cancel</button>
+        {% csrf_token %}
+
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="First_name"><b>First name</b></label>
+    <input type="text" placeholder="First name" name="First_name" id="First_name" required>
+
+    <label for="Last_name"><b>Last name</b></label>
+    <input type="text" placeholder="Last name" name="Last_name" id="Last_name" required>
+
+    <label for="User_name"><b>User name</b></label>
+    <input type="text" placeholder="user name" name="User_name" id="User_name" required>
+
+    <label for="Email"><b>Email</b></label>
+    <input type="text" placeholder="Email" name="email" id="Email" required>
 
 
+    <label for="password1"><b>Enter Password</b></label>
+    <input type="password" placeholder=" Password" name="password1" id="password1" required>
+
+    <label for="password2"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="password2" id="password2" required>
+    <hr>
+
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+
+  <div class="container signin">
+    <p>Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
+  </div>
 
 </form>
-
+</div>
 <div>
     {%  for message in messages %}
     <h3>{{message}}</h3>

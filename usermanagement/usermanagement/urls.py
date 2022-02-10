@@ -23,7 +23,6 @@ urlpatterns = [
     path('login/', include('login.urls')),
     path('createuser/', include('createuser.urls')),
     path('updateuser/', include('updateuser.urls')),
-    path('dltuser/', include('dltuser.urls')),
 
     path('load_form', views.load_form),
     path('add', views.add),

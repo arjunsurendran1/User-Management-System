@@ -27,11 +27,23 @@
   background-color: #4CAF50;
   color: white;
 }
+
+.class1{
+  padding-left:450px;
+
+}
+.class2{
+  padding-left:430px;
+  padding-top:250px;
+}
 </style>
 </head>
 <body>
+    <h1 class="class2">User Management system</h1>
+
+<div  class="class1">
 <button class="button button1" type="submit" onclick="location.href='{% url 'register' %}'"> Register </button>
 <button class="button button1" type="submit" onclick="location.href='{% url 'login' %}'"> Login </button>
-
+</div>
 </body>
 </html>

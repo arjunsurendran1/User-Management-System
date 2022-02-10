@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
@@ -5,6 +6,7 @@ from django.views.decorators.csrf import csrf_protect
 # Create your views here.
 
 
+@login_required
 @csrf_protect
 def login(request):
     if request.method == 'POST':
@@ -24,20 +26,4 @@ def login(request):
 
 
 def home_page(request):
-    return render(request, 'home_page.html')
-
-
-def create_user(request):
-    return render(request, 'create_user.html')
-
-
-def update_user(request):
-    return render(request, 'update.html')
-
-
-def delete_user(request):
-    return render(request, 'delete.html')
-
-
-def home(request):
     return render(request, 'home_page.html')

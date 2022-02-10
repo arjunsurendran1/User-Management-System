@@ -34,7 +34,6 @@ def register(request):
             messages.info(request, ' password not maching.')
             return redirect('register')
 
-      #  return redirect('/')
     else:
         return render(request, 'register.html')
 
@@ -42,6 +41,3 @@ def register(request):
 def registeration(request):
     return render(request, 'home.html')
 
-
-#def login(request):
-   # return render(request, 'login.html')
