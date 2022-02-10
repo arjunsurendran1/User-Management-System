@@ -16,11 +16,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
-
+from updateuser import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('usermanage.urls')),
     path('login/', include('login.urls')),
     path('createuser/', include('createuser.urls')),
     path('updateuser/', include('updateuser.urls')),
+    path('dltuser/', include('dltuser.urls')),
+
+    path('load_form', views.load_form),
+    path('add', views.add),
+    path('show', views.show),
+    path('edit/<int:id>', views.edit),
+    path('update/<int:id>', views.update),
+    path('delete/<int:id>', views.delete),
 ]
+
+

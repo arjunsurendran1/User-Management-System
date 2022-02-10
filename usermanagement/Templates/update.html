@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Update</title>
-</head>
+{% extends 'home_page.html' %}
+
 
 <body>
 {% block content %}
-<form method="POST" action="/update/{{ ums.id }}">
+<form method=post action="/update/{{ ums.id }}">
     {% csrf_token %}
 <table>
     <tr><td><input type="text" name="First_name" required maxlength="200" value="{{ ums.First_name }}"/></td></tr>

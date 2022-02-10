@@ -1,8 +1,8 @@
-from django.forms import ModelForm
+from django import forms
 from usermanage.models import UserRegistration
 
 
-class UserUpdateForm(ModelForm):
+class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = UserRegistration
         fields = "__all__"

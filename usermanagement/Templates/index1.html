@@ -1,0 +1,27 @@
+
+{% extends 'home_page.html' %}
+
+{% block content %}
+
+<body>
+<form method="post" action="add">
+    {% csrf_token %}
+
+    <label>First_name: </label>
+    <div>{{ form.First_name }}</div>
+    <label>Last name: </label>
+    <div>{{ form.Last_name }}</div>
+    <label>User name: </label>
+    <div>{{ form.User_name }}</div>
+    <label>Email:</label>
+    <div> {{ form.Email }}</div>
+    <label>Password:</label>
+    <div> {{ form.password1 }}</div>
+    <label>Confirm password</label>
+    <div> {{ form.password2 }}</div>
+        <button class="btn btn-info" type="submit">Add</button>
+
+
+</form>
+</body>
+{% endblock %}
