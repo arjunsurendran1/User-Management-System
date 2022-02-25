@@ -20,3 +20,5 @@ class UserRegistration(models.Model):
     Email = models.CharField(max_length=200)
     password1 = models.CharField(max_length=200)
     password2 = models.CharField(max_length=200)
+
+

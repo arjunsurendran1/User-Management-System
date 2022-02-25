@@ -20,9 +20,9 @@ from updateuser import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('usermanage.urls')),
-    path('login/', include('login.urls')),
     path('createuser/', include('createuser.urls')),
     path('updateuser/', include('updateuser.urls')),
+    path('login/', include('login.urls')),
 
     path('load_form', views.load_form),
     path('add', views.add),

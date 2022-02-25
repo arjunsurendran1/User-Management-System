@@ -74,10 +74,8 @@ span.psw {
 <body>
 
 <div class="div1" >
-
 <form action="login" method="post">
         {% csrf_token %}
-
 
   <div class="container">
     <label for="username"><b>Username</b></label>
@@ -85,6 +83,12 @@ span.psw {
 
     <label for="password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
+
+     <input type="radio" id="user" name="type" value="USER" checked>
+<label for="user">User</label><br>
+<input type="radio" id="admin" name="type" value="ADMIN">
+<label for="admin">Admin</label><br>
+
 
     <button type="submit">Login</button>
     <label>

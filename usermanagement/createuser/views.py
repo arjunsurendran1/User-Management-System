@@ -16,15 +16,15 @@ def create_user(request):
         email = request.POST['email']
 
         if password1==password2:
-            if User.objects.filter(username=User_name).exists():
+            if UserRegistration.objects.filter(username=User_name).exists():
                 messages.info(request,'User name taken')
                 return redirect('create_user')
-            elif User.objects.filter(email=email).exists():
+            elif UserRegistration.objects.filter(email=email).exists():
                 messages.info(request,'Email name taken')
                 return redirect('create_user')
 
             else:
-                user = User.objects.create_user(username=User_name, password=password1, email=email, first_name=First_name, last_name=Last_name)
+                user = UserRegistration.objects.create_user(username=User_name, password=password1, email=email, first_name=First_name, last_name=Last_name)
                 user.save()
 
                 reg = UserRegistration()
@@ -43,4 +43,5 @@ def create_user(request):
             return redirect('create_user')
 
     else:
-        return render(request, 'create_user.html')
+        return render(request, 'login.html')
+
